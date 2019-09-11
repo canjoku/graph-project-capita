@@ -2,23 +2,20 @@ import React from 'react'
 import "../scss/App.scss"
 
 import graph from '../library/instantiate-graph-structure'
-import PriorityQueue from '../library/priority-queue-class'
-
-const queue = new PriorityQueue()
 
 class App extends React.Component {
   constructor(props) {
     super();
-    this.state = {
-      graph: graph.graphList,
-      queue: queue.values,
-      start:'',
-      end:''
-    }
 
+    this.state = {
+      graph,
+      start: '',
+      end: '',
+    }
+    this.setStartLocation = this.setStartLocation.bind(this)
+    this.setEndLocation = this.setEndLocation.bind(this)
     this.shortestPath = this.shortestPath.bind(this)
-    this.setLocation = this.setStartLocation.bind(this)
-    this.setLocation = this.setEndLocation.bind(this)
+    
   }
 
   setStartLocation (location) {
@@ -34,37 +31,12 @@ class App extends React.Component {
   }
 
   shortestPath () {
-    
-    const locations = this.state.queue
-    const distances = {}
-    const previous = {}
-
-
-    for(let location in this.state.graph) {
-      if(location == this.state.start) {
-        distances[location] = 0;
-
-        queue.enqueue(location, 0)
-        console.log(queue)
-        
-      } else {
-        distances[location] = Infinity;
-        
-        const value = queue.enqueue(location, Infinity)
-        
-      }
-      previous[location] = null
-    }
-
-    // As long as there is a location to visit
-    
-
-
-
+    const hopsArray = this.state.graph.Dijkstra(this.state.start, this.state.end)
+    console.log(hopsArray)
   }
 
   render () {
-    console.log(this.state)
+    console.log(this.state.graph)
     return (
       <>
         <div>Click on a start and End Node. Shortest Distance will be displayed</div>
@@ -91,9 +63,10 @@ class App extends React.Component {
           <div onClick = {() => this.setEndLocation('H')}>H</div>
         </div>
 
-        <div onClick={this.shortestPath}>Calculate</div>
+        <div>Start at {this.state.start}</div>
+        <div>End at {this.state.end}</div>
 
-        <div>Reset</div>
+        <div onClick={this.shortestPath}>Show Path</div>
       </>
     )
   }
