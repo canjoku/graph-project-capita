@@ -1,0 +1,16 @@
+.c-path-section {
+  display: inline;
+  button {
+  background-color: var(--button-path-colour);
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid var(--main-font-light);
+	display:inline-block;
+	cursor:pointer;
+	color:var(--main-font-dark);
+  font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+  }
+}

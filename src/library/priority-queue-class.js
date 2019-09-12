@@ -3,11 +3,11 @@ class PriorityQueue {
     this.values = []
   }
 
-  enqueue(val, priority) {
+  enqueue (val, priority) {
     this.values.push({val, priority})
   }
 
-  dequeue() {
+  dequeue () {
     return this.values.shift()
   }
 

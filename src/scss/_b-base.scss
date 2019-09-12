@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 25px;
+  font-family: 'Josefin Sans', 'sans serif';
+  scroll-behavior: smooth;
+}
+
+:root {
+  --button-start-colour: #f2b632;
+  --button-end-colour: #149e75;
+  --button-path-colour: #ca570a;
+  --button-show-colour: #486be9;
+  --main-white: #fff;
+  --main-font-light: #131212;
+  --main-font-dark: #141414;
+}
+
+section {
+  padding: 1.5rem 0;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  margin: 1em 0 0.5em 0;
+	color: var(--main-font-dark-dark);
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 30px;
+}
+
+h2 {
+  margin: 1em 0 0.5em 0;
+	color: var(--main-font-dark-dark);
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 30px;
+}
