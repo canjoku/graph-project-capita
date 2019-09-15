@@ -49,9 +49,6 @@ class App extends React.Component {
  renderDistance () {
    const hopsArray = this.state.hopsArray
 
-   
-   
-
    // i will use some sort of loop to iterate over the hopsArray and for each item in the hops array,
    // i will traverse the weightsArray and pull out the associated weight (edge) between the two neigbouring vertexes. 
    
@@ -64,8 +61,6 @@ class App extends React.Component {
     // nodes in hopsArray.
     // To explain at interview if not able to implement
   }
-
-  
   
  }
 
