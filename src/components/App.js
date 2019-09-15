@@ -42,7 +42,7 @@ class App extends React.Component {
  renderHops () {
   const hopItems = this.state.hopsArray.map((hop, index) => <button key={index}>{hop}</button>)
   return (
-    <section className='c-path-section'>{hopItems}</section>
+    <section className='c-path-section' data-test='path-section'>{hopItems}</section>
   )   
  }
 
@@ -65,12 +65,11 @@ class App extends React.Component {
  }
 
   render () {
-    
     return (
       <>
         <h1>Starting Destination</h1>
         
-        <section className = 'c-start-section'>
+        <section className = 'c-start-section' data-test='start-section'>
           <button onClick = {() => this.setStartLocation('A')}>A</button>
           <button onClick = {() => this.setStartLocation('B')}>B</button>
           <button onClick = {() => this.setStartLocation('C')}>C</button>
@@ -82,7 +81,7 @@ class App extends React.Component {
         </section>
 
         <h1>Ending Destination</h1>
-        <section className = 'c-end-section'>
+        <section className = 'c-end-section' data-test='end-section'>
           <button onClick = {() => this.setEndLocation('A')}>A</button>
           <button onClick = {() => this.setEndLocation('B')}>B</button>
           <button onClick = {() => this.setEndLocation('C')}>C</button>
@@ -98,7 +97,7 @@ class App extends React.Component {
 
         
 
-        <section className='c-show-path-section'>
+        <section className='c-show-path-section' data-test='show-path-section'>
           <button onClick={this.path}>Show Path</button>
         </section>
         <h2>Shortest Path from {this.state.start} to {this.state.end} is</h2>
