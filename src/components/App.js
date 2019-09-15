@@ -17,6 +17,7 @@ class App extends React.Component {
     this.setEndLocation = this.setEndLocation.bind(this)
     this.path = this.path.bind(this)
     this.renderHops = this.renderHops.bind(this)
+    this.renderDistance = this.renderDistance.bind(this)
     
   }
 
@@ -46,6 +47,7 @@ class App extends React.Component {
   )   
  }
 
+ // this should return the sum of shortest distances. Incomplete!!
  renderDistance () {
    const hopsArray = this.state.hopsArray
 
@@ -57,11 +59,15 @@ class App extends React.Component {
     var hop = hopsArray[index]
     const pathObject = weightsArray[hop]
 
+    console.log((pathObject)) 
+
+    
+
     // Implement a graph traversal algorithm to traverse the pathObject data structure to add up the weights corresponding to 
     // nodes in hopsArray.
     // To explain at interview if not able to implement
   }
-  
+
  }
 
   render () {
